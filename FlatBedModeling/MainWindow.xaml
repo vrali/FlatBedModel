@@ -1,0 +1,45 @@
+﻿<Window x:Class="FlatBedModeling.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:h="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
+        Title="MainWindow" Height="500" Width="500">
+    <Grid>
+        <Grid.Resources>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <h:HelixViewport3D Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" CameraRotationMode="Turnball" CoordinateSystemHorizontalPosition="Center" EnableCurrentPosition="True" ShowCameraInfo="True" ShowCoordinateSystem="True" ShowViewCube="False" >
+
+            <h:HelixViewport3D.Camera>
+                <PerspectiveCamera x:Name="Camera"/>
+            </h:HelixViewport3D.Camera>
+
+            <h:MeshGeometryVisual3D x:Name="FlatBed2"></h:MeshGeometryVisual3D>
+            <h:DefaultLights/>
+        </h:HelixViewport3D>
+        <StackPanel Grid.RowSpan="2"  Grid.Column="1">
+            <Slider x:Name="XSlider" Height="23" HorizontalAlignment="Left" 
+                Margin="12,12,0,0"
+                VerticalAlignment="Top" Width="187" 
+                Maximum="360" Minimum="0"
+                />
+            <Slider x:Name="YSlider" Height="23" HorizontalAlignment="Left" 
+                Margin="12,12,0,0"
+                VerticalAlignment="Top" Width="187" 
+                Maximum="360" Minimum="0"
+                />
+            <Slider x:Name="ZSlider" Height="23" HorizontalAlignment="Left" 
+                Margin="12,12,0,0"
+                VerticalAlignment="Top" Width="187" 
+                Maximum="360" Minimum="0"
+                />
+        </StackPanel>
+
+    </Grid>
+</Window>
